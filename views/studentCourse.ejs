@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Courses</title>
+</head>
+<body>
+  <h1>Hello <%= student.firstName %>!</h1>
+  <h2>Your Courses:</h2>
+  <ul>
+    <% if(student.courses && student.courses.length > 0) { %>
+      <% student.courses.forEach(course => { %>
+        <li><%= course.name %> <% if(course.grade) { %> - Grade: <%= course.grade %> <% } %></li>
+      <% }) %>
+    <% } else { %>
+      <li>No courses enrolled yet</li>
+    <% } %>
+  </ul>
+  <a href="/student/home">Back to Home</a>
+</body>
+</html>
